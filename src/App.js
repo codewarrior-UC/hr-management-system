@@ -1,23 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import AdminNav from "./component/admin/AdminNav";
+import { Routes, Route} from "react-router-dom";
+import Loginn from "./component/Loginn";
+
+import AdminDashboard from "./component/admin/admin-dash/AdminDashboard";
+import EmployeeReg from "./component/common/Employee-management/EmployeeReg";
+import EmployeerReg from "./component/common/Employeer-Management/EmployeerReg";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <AdminNav/>
+            <Routes>
+              <Route path="/" element={<AdminDashboard/>}/>
+              <Route path="/EmployeeReg" element={<EmployeeReg/>}/>
+              <Route path="/EmployeerReg" element={<EmployeerReg/>}/>
+            </Routes>
+      <Loginn />
+
     </div>
   );
 }
